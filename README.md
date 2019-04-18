@@ -1,9 +1,9 @@
 # Transcriptomic analysis (RNAseq) of Macrobrachium rosenbergii post-larvae in response to Macrobrachium rosenbergii nodavirus (MrNV) infection.
 
 ## Publication information
-
+coming soon
 ## Data availibility
-
+coming soon
 ## About
 This pipeline was used for the transcriptome assembly and differential expression analysis of M.rosenbergii in response to MrNV infection.  **[Snakemake](https://snakemake.readthedocs.io/en/stable/)** tool was used to create reproducible and scalable automated pipeline. The pipeline contained three major sections including raw data pre-processing, transcriptome assembly, and post-processing of the transcriptome (see below). 
 
@@ -11,8 +11,8 @@ This pipeline was used for the transcriptome assembly and differential expressio
 
 ## Processing steps
 Raw data pre-processing:
-1. Quality assessment (**[FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)** v 0.11.5 and **[MultiQC](https://multiqc.info)** v 1.8)
-2. Quality trimming (**[Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)** v 0.36)
+1. Perform quality assessment (**[FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)** v 0.11.5 and **[MultiQC](https://multiqc.info)** v 1.8) to examine **[Phred](https://en.wikipedia.org/wiki/Phred_quality_score)** quality score, GC content, adaptor contamination, size distribution, and N base ratio
+2. Perform quality trimming (**[Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)** v 0.36) to trim low quality base, remove N base, and discard short read
 3. Merge all the left and right reads data into universal left and right reads data
 
 Transcriptome assembly:
