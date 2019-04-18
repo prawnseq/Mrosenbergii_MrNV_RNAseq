@@ -11,23 +11,23 @@ This pipeline was used for the transcriptome assembly and differential expressio
 
 ## Processing steps
 Raw data pre-processing:
-1. Perform quality assessment (**[FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)** v 0.11.5 and **[MultiQC](https://multiqc.info)** v 1.8) to examine **[Phred](https://en.wikipedia.org/wiki/Phred_quality_score)** quality score, GC content, adaptor contamination, size distribution, and N base ratio
-2. Perform quality trimming (**[Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)** v 0.36) to trim low quality base, remove N base, and discard short read
-3. Merge all the left and right reads data into universal left and right reads data
+1. Perform quality assessment using **[FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)** v 0.11.5 and **[MultiQC](https://multiqc.info)** v 1.8 to examine **[Phred](https://en.wikipedia.org/wiki/Phred_quality_score)** quality score, GC content, adaptor contamination, size distribution, and N base ratio
+2. Perform quality trimming using **[Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)** v 0.36 to trim low quality base, remove N base, and discard short read
+3. Concatenate all the left and right reads data into universal left and right reads data using merge command
 
 Transcriptome assembly:
-1. De novo transcriptome assembly (**[Trinity](https://github.com/trinityrnaseq/trinityrnaseq)** v 2.8.0)
-2. Remove the redundancy (**[CD-HIT](http://weizhongli-lab.org/cd-hit/)**) using 95% similarity threshold
+1. De novo transcriptome assembly using **[Trinity](https://github.com/trinityrnaseq/trinityrnaseq)** v 2.8.0
+2. Remove the redundancy using **[CD-HIT](http://weizhongli-lab.org/cd-hit/)** (95% similarity threshold was used)
 
 Post-processing:
 1. Transcriptome quality assessment:
-- Calculate fragment mapping rates  (**[Bowtie 2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)** v 2.3.0) by mapping reads back to the transcripts
-- Examine orthologs completeness (**[BUSCO](https://busco.ezlab.org)** v 3) against 1,066 complete universal single copy orthologous gene from arthropoda_odb9 database 
+- Calculate fragment mapping rates by mapping reads back to the transcripts using **[Bowtie 2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)** v 2.3.0 
+- Examine orthologs completeness against 1,066 complete universal single copy orthologous gene from **[arthropoda_odb9 database using](https://busco.ezlab.org/datasets/arthropoda_odb9.tar.gz)** using (**[BUSCO](https://busco.ezlab.org)** v 3) 
 - Calculate ExN50 statistics (top x% most expressed transcripts that have at least N50 length) (see **[details](https://github.com/trinityrnaseq/trinityrnaseq/wiki/Transcriptome-Contig-Nx-and-ExN50-stats)**)
 2. Transcriptome annotation:
-- Homology search against **[UniProt](https://data.broadinstitute.org/Trinity/Trinotate_v3_RESOURCES/uniprot_sprot.pep.gz)** database (**[BlastX](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download)** v 2.6.0)
-- Homology search against **[non-redundant arthropods](https://ftp.ncbi.nlm.nih.gov/blast/db/v5/nr_v5.*.tar.gz)** database (**[BlastX](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download)** v 2.8.0)
-- Obtain functional annotation using BlastX UniProt results from **[EggNOG](http://eggnogdb.embl.de/#/app/home)** (Evolutionary Genealogy of Genes: Non-supervised Orthologous Groups), **[KEGG](https://www.kegg.jp)** (Kyoto Encyclopedia of Genes and Genomes), and **[GO](http://geneontology.org)** (Gene Ontology) database (**[Trinotate](https://github.com/Trinotate/Trinotate.github.io/wiki)** v 3.0.2)
+- Homology search against **[UniProt](https://data.broadinstitute.org/Trinity/Trinotate_v3_RESOURCES/uniprot_sprot.pep.gz)** database using **[BlastX](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download)** v 2.6.0
+- Homology search against **[non-redundant arthropods](https://ftp.ncbi.nlm.nih.gov/blast/db/v5/nr_v5.*.tar.gz)** database using **[BlastX](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download)** v 2.8.0
+- Obtain functional annotation using BlastX UniProt results from **[EggNOG](http://eggnogdb.embl.de/#/app/home)** (Evolutionary Genealogy of Genes: Non-supervised Orthologous Groups), **[KEGG](https://www.kegg.jp)** (Kyoto Encyclopedia of Genes and Genomes), and **[GO](http://geneontology.org)** (Gene Ontology) database using **[Trinotate](https://github.com/Trinotate/Trinotate.github.io/wiki)** v 3.0.2 
 3. Differential expression analysis:
-- Quantify transcripts using alignment based abundance estimation method (**[RSEM](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-12-323)**)
-- Perform differential expression analysis using the trimmed mean of M-values normalization method (TMM) (**[EdgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html)**)
+- Quantify transcripts using alignment based abundance estimation method using **[RSEM](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-12-323)**
+- Perform differential expression analysis using **[EdgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html)** (the trimmed mean of M-values normalization method (TMM) )
