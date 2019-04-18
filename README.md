@@ -22,7 +22,7 @@ Transcriptome assembly:
 Post-processing:
 1. Transcriptome quality assessment:
 - Calculate fragment mapping rates by mapping reads back to the transcripts using **[Bowtie 2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)** v 2.3.0 
-- Examine orthologs completeness against 1,066 complete universal single copy orthologous gene from **[arthropoda_odb9 database using](https://busco.ezlab.org/datasets/arthropoda_odb9.tar.gz)** using (**[BUSCO](https://busco.ezlab.org)** v 3) 
+- Examine orthologs completeness against 1,066 complete universal single copy orthologous gene from **[arthropoda_odb9 database using](https://busco.ezlab.org/datasets/arthropoda_odb9.tar.gz)** using **[BUSCO](https://busco.ezlab.org)** v 3
 - Calculate ExN50 statistics (top x% most expressed transcripts that have at least N50 length) (see **[details](https://github.com/trinityrnaseq/trinityrnaseq/wiki/Transcriptome-Contig-Nx-and-ExN50-stats)**)
 2. Transcriptome annotation:
 - Homology search against **[UniProt](https://data.broadinstitute.org/Trinity/Trinotate_v3_RESOURCES/uniprot_sprot.pep.gz)** database using **[BlastX](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download)** v 2.6.0
