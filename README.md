@@ -13,7 +13,7 @@ This pipeline was used for the transcriptome assembly and differential expressio
 Raw data pre-processing:
 1. Quality assessment (**[FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)** v 0.11.5 and **[MultiQC](https://multiqc.info)** v 1.8)
 2. Quality trimming (**[Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)** v 0.36)
-3. Merge
+3. Merge all the left and right reads data into universal left and right reads data
 
 Transcriptome assembly:
 1. De novo transcriptome assembly (**[Trinity](https://github.com/trinityrnaseq/trinityrnaseq)** v 2.8.0)
@@ -24,7 +24,7 @@ Post-processing:
 - Fragment mapping rates  (**[Bowtie 2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)** v 2.3.0)
 - Orthologs completeness against arthropoda_odb9 database (**[BUSCO](https://busco.ezlab.org)** v 3)
 - ExN50 statistics (see **[details](https://github.com/trinityrnaseq/trinityrnaseq/wiki/Transcriptome-Contig-Nx-and-ExN50-stats)**)
-2. Transctiprome annotation:
+2. Transcriptome annotation:
 - Homology search against **[UniProt](https://data.broadinstitute.org/Trinity/Trinotate_v3_RESOURCES/uniprot_sprot.pep.gz)** database (**[BlastX](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download)** v 2.6.0)
 - Homology search against **[non-redundant arthropods](https://ftp.ncbi.nlm.nih.gov/blast/db/v5/nr_v5.*.tar.gz)** database (**[BlastX](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download)** v 2.8.0)
 - Obtain functional annotation using BlastX UniProt results from **[EggNOG](http://eggnogdb.embl.de/#/app/home)** (Evolutionary Genealogy of Genes: Non-supervised Orthologous Groups), **[KEGG](https://www.kegg.jp)** (Kyoto Encyclopedia of Genes and Genomes), and **[GO](http://geneontology.org)** (Gene Ontology) database (**[Trinotate](https://github.com/Trinotate/Trinotate.github.io/wiki)** v 3.0.2)
