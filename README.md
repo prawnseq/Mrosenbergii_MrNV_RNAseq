@@ -5,5 +5,6 @@
 ## Data availibility
 
 ## About
-This pipeline was used for the transcriptome assembly and differential expression analysis of M.rosenbergii in response to MrNV infection. The pipeline was written using **[Snakemake](https://snakemake.readthedocs.io/en/stable/)** tool. The pipeline contained three major sections including raw data pre-processing, transcriptome assembly, and post-processing of the transcriptome. 
+This pipeline was used for the transcriptome assembly and differential expression analysis of M.rosenbergii in response to MrNV infection. The pipeline was written using **[Snakemake](https://snakemake.readthedocs.io/en/stable/)** tool. The pipeline contained three major sections including raw data pre-processing, transcriptome assembly, and post-processing of the transcriptome (see below). 
 
+![alt text](https://github.com/prawnseq/Mrosenbergii_MrNV_RNAseq/blob/master/AnalysisPipeline.png "analysis pipeline")
