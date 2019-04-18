@@ -29,5 +29,5 @@ Post-processing:
 - Homology search against **[non-redundant arthropods](https://ftp.ncbi.nlm.nih.gov/blast/db/v5/nr_v5.*.tar.gz)** database (**[BlastX](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download)** v 2.8.0)
 - Obtain functional annotation using BlastX UniProt results from **[EggNOG](http://eggnogdb.embl.de/#/app/home)** (Evolutionary Genealogy of Genes: Non-supervised Orthologous Groups), **[KEGG](https://www.kegg.jp)** (Kyoto Encyclopedia of Genes and Genomes), and **[GO](http://geneontology.org)** (Gene Ontology) database (**[Trinotate](https://github.com/Trinotate/Trinotate.github.io/wiki)** v 3.0.2)
 3. Differential expression analysis:
-- Abundance estimation (**[RSEM](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-12-323)**)
-- Differential expression analysis (**[EdgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html)**)
+- Quantify transcripts using alignment based abundance estimation method (**[RSEM](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-12-323)**)
+- Perform differential expression analysis using the trimmed mean of M-values normalization method (TMM) (**[EdgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html)**)
