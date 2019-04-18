@@ -1,0 +1,149 @@
+### PATH to the software ####
+software:
+    fastqc: fastqc
+    multiqc: multiqc
+    trimmomatic: java -jar $EBROOTTRIMMOMATIC/trimmomatic-0.36.jar
+    trinity: /global/home/hpc4375/Trinity/Trinity
+    cdhit: cd-hit-est
+    bowtie2build: bowtie2-build
+    bowtie2: bowtie2
+    busco: run_BUSCO.py
+    blastx: blastx
+    blastxnr: /global/home/hpc4375/ncbi-blast-2.8.0+/bin/blastx
+    blastp: blastp
+    hmmscan: hmmscan
+    signalp: /global/home/hpc4375/signalp-4.1/signalp
+#### signalP installation ####
+    ## Extract file
+    ## Edit Signalp perl file in the first paragraph "full path to the SignalP"
+    ## Edit max input allowed to 200,000
+    tmhmm: tmhmm
+#### tmhmm installation ####
+    ## Extract file
+    ## Edit bin/tmhmm perl file "full path to the tmhmm"
+    ## Edit bin/tmhmm perl file       first line '/usr/bin/perl' (Correct perl dir)
+    ## Edit bin/tmhmmformat perl file first line '/usr/bin/perl' (Correct perl dir)
+    transdecoder_longorfs: TransDecoder.LongOrfs
+    transdecoder_predict: TransDecoder.Predict
+    genetransmap: /global/home/hpc4375/Trinity/util/support_scripts/get_Trinity_gene_to_trans_map.pl
+    trinotate: Trinotate
+    trinotategoextract: /global/home/hpc4375/Trinotate/util/extract_GO_assignments_from_Trinotate_xls.pl
+#### To export in WEGO 2.0 NATIVE format ####
+    ## Change   print "$feature_id\t" . join(",", @go_ids) . "\n"; in perl script
+    ## Into     print "$feature_id\t" . join("\t", @go_ids) . "\n";
+    rsem: /global/home/hpc4375/Trinity/util/align_and_estimate_abundance.pl
+    trinitystat: /global/home/hpc4375/Trinity/util/TrinityStats.pl
+    exn50: /global/home/hpc4375/Trinity/util/misc/contig_ExN50_statistic.pl
+    exn50plot: /global/home/hpc4375/Trinity/util/misc/plot_ExN50_statistic.Rscript
+    matrix: /global/home/hpc4375/Trinity/util/abundance_estimates_to_matrix.pl
+    deg: /global/home/hpc4375/Trinity/Analysis/DifferentialExpression/run_DE_analysis.pl
+    pca: /global/home/hpc4375/Trinity/Analysis/DifferentialExpression/PtR
+    heatmap: /global/home/hpc4375/Trinity/Analysis/DifferentialExpression/analyze_diff_expr.pl
+
+### software setting ###
+threads:
+    fastqc: 24
+    trimmomatic: 24
+    trinity: 24
+    cdhit: 24
+    busco: 24
+    blastx: 24
+    blastp: 24
+    hmmscan: 24
+    transdecoder: 24
+
+trimmomatic_params: CROP:74 HEADCROP:9 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+    # CROP = Crop X bases from the beginning (Crop the 75th-low-quality base)
+    # HEADCROP = Removes X bases from the beginning of the read. (9 is Lexogen's recommendation)
+    # LEADING and TRAILING = remove leading low quality or N base
+    # SLIDINGWINDOW X:Y = Scan the read X-base sliding window and cutting when average quality per base is below Y
+    # MINLEN = Discard read below X base long
+trinity_params:
+    max_memory: 256G
+    # 1G per 1M read data is recommended
+    SS_lib_type: RF
+    # RF = first read is sequenced as antisense (reverse) and second read as sense (forward)
+    # FR = first read is sequences as sense (forward) and second read as antisense (reverse)
+
+cdhit_params:
+    c: 0.95 # sequence identity threshold, default 0.9
+
+busco_params:
+    mode: transcriptome
+    lineage: /global/home/hpc4375/arthropoda_odb9 ### "https://busco.ezlab.org/datasets/arthropoda_odb9.tar.gz"
+    out_name: BUSCO    ## output: directory(run_XXXXX), XXXXX has to match config["busco_params"]["out_name"] ##
+
+deg_params:
+    samples: /global/home/hpc4375/samples.txt
+    #### conditionA   condA-rep1
+    #### conditionA   condA-rep2
+    #### where condA-rep1, condA-rep2, condB-rep1, etc..., are all column names in the 'counts.matrix'
+    pc: 2 ## principal components
+## For heatmap and extracting top DEG ##
+    p: 5e-2 ## p-value cutoff (default is 1e-3)
+    c: 1 ## fold change 2^x (default is 2 > 2^2 = 4 FC)
+    maxDEgene: 100 ## extract only top XXXX of DE
+
+blastx_nr_params:
+    database: /global/home/hpc4375/NR/nr ### PATH to blast DB
+    evalue: 1e-5
+    max_target_seqs: 1 ### Default is 400, 10 is recommended by Blast2go manual
+    outfmt: "6 qseqid stitle pident length mismatch gapopen qstart qend sstart send evalue bitscore"
+    ### Default -outfmt "6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore"
+    ### http://www.metagenomics.wiki/tools/blast/blastn-output-format-6
+    taxidlist: /global/home/hpc4375/NR/6656.txids
+
+blastx_trinotate_params: ## For Trinotate annotation
+    database: /global/home/hpc4375/uniprot_sprot.pep ### PATH to blast DB (which is already executed makeblastdb)
+    evalue: 1e-5
+    max_target_seqs: 1 ### For Trinotate annotation
+    outfmt: 6  ### outfmt 5=XML file for Blast2GO, 6=tabular file ####
+
+hmmscan_params:
+    database: /global/home/hpc4375/Pfam-A.hmm #### PATH to Pfam DB (which is already executed hmmpress Pfam-A.hmm)
+
+transdecoder_params:
+    min_length: 100 ### Identify ORF that has at least 100 amino acid long (Default)
+
+trinotate_params:
+    sqlite: /global/home/hpc4375/Trinotate_v3.sqlite
+
+#### Samples (filename:full directory to it) ####
+    ### Samples by name ###
+samplesname:
+    Control1 :
+      - /global/home/hpc4375/SampleFQ/Control1.f.fastq.gz
+      - /global/home/hpc4375/SampleFQ/Control1.r.fastq.gz
+    Control2 :
+      - /global/home/hpc4375/SampleFQ/Control2.f.fastq.gz
+      - /global/home/hpc4375/SampleFQ/Control2.r.fastq.gz
+    Control3 :
+      - /global/home/hpc4375/SampleFQ/Control3.f.fastq.gz
+      - /global/home/hpc4375/SampleFQ/Control3.r.fastq.gz
+    Control4 :
+      - /global/home/hpc4375/SampleFQ/Control4.f.fastq.gz
+      - /global/home/hpc4375/SampleFQ/Control4.r.fastq.gz
+    Control5 :
+      - /global/home/hpc4375/SampleFQ/Control5.f.fastq.gz
+      - /global/home/hpc4375/SampleFQ/Control5.r.fastq.gz
+    Control6 :
+      - /global/home/hpc4375/SampleFQ/Control6.f.fastq.gz
+      - /global/home/hpc4375/SampleFQ/Control6.r.fastq.gz
+    Infected1 :
+      - /global/home/hpc4375/SampleFQ/Infected1.f.fastq.gz
+      - /global/home/hpc4375/SampleFQ/Infected1.r.fastq.gz
+    Infected2 :
+      - /global/home/hpc4375/SampleFQ/Infected2.f.fastq.gz
+      - /global/home/hpc4375/SampleFQ/Infected2.r.fastq.gz
+    Infected3 :
+      - /global/home/hpc4375/SampleFQ/Infected3.f.fastq.gz
+      - /global/home/hpc4375/SampleFQ/Infected3.r.fastq.gz
+    Infected4 :
+      - /global/home/hpc4375/SampleFQ/Infected4.f.fastq.gz
+      - /global/home/hpc4375/SampleFQ/Infected4.r.fastq.gz
+    Infected5 :
+      - /global/home/hpc4375/SampleFQ/Infected5.f.fastq.gz
+      - /global/home/hpc4375/SampleFQ/Infected5.r.fastq.gz
+    Infected6 :
+      - /global/home/hpc4375/SampleFQ/Infected6.f.fastq.gz
+      - /global/home/hpc4375/SampleFQ/Infected6.r.fastq.gz

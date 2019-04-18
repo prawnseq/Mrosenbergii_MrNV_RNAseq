@@ -1,0 +1,13 @@
+ConControl  Control1
+ConControl  Control2
+ConControl  Control3
+ConControl  Control4
+ConControl  Control5
+ConControl  Control6
+
+ConInfected  Infected1
+ConInfected  Infected2
+ConInfected  Infected3
+ConInfected  Infected4
+ConInfected  Infected5
+ConInfected  Infected6
