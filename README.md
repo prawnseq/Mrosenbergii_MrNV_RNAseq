@@ -31,3 +31,23 @@ Post-processing:
 3. Differential expression analysis:
 - Quantify transcripts using alignment based abundance estimation method using **[RSEM](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-12-323)**
 - Perform differential expression analysis using **[EdgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html)** (the trimmed mean of M-values normalization method (TMM) )
+
+## Contact informations
+**Phongthana Pasookhush**
+- Ph.D. student in Biotechnology, Department of Biology, Srinakharinwirot University
+- [ResearchGate](https://www.researchgate.net/profile/Phongthana_Pasookhush2)| j_pasook@hotmail.com
+
+**Charlie Hindmarch, Ph.D.**
+- Adjunct Assistant Professor, Department of Medicine, Queen's University
+
+**Siwaporn Longyant, Ph.D.**
+- Associate professor, Department of Biology, Srinakharinwirot University
+
+**Paisarn Sithigorngul, Ph.D.**
+- Professor, Department of Biology, Srinakharinwirot University
+
+**William Bendena, Ph.D.**
+- Professor of Molecular Physiology and Behaviour, Department of Biology, Queen's University
+
+**Parin Chaivisuthangkura, Ph.D.**
+- Associate professor, Department of Biology, Srinakharinwirot University
