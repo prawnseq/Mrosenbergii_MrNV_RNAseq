@@ -1,11 +1,11 @@
-# Transcriptomic analysis (RNAseq) of Macrobrachium rosenbergii post-larvae in response to Macrobrachium rosenbergii nodavirus (MrNV) infection.
+# Transcriptomic analysis (RNAseq) of *Macrobrachium rosenbergii* post-larvae in response to *Macrobrachium rosenbergii* nodavirus (*Mr*NV) infection.
 
 ## Publication information
 coming soon
 ## Data availibility
-coming soon
+Raw data has been uploaded to the National Centre for Biotechnology Information Sequence Read Archive (SRA) under the accession BioProject number: PRJNA550272.
 ## About
-This pipeline was used for the transcriptome assembly and differential expression analysis of M.rosenbergii in response to MrNV infection.  **[Snakemake](https://snakemake.readthedocs.io/en/stable/)** tool was used to create reproducible and scalable automated pipeline. The pipeline contained three major sections including raw data pre-processing, transcriptome assembly, and post-processing of the transcriptome (see below). 
+This pipeline was used for the transcriptome assembly and differential expression analysis of *M.rosenbergii* in response to *MrNV* infection.  **[Snakemake](https://snakemake.readthedocs.io/en/stable/)** tool was used to create reproducible and scalable automated pipeline. The pipeline contained three major sections including raw data pre-processing, transcriptome assembly, and post-processing of the transcriptome (See below). 
 
 ![alt text](https://github.com/prawnseq/Mrosenbergii_MrNV_RNAseq/blob/master/AnalysisPipeline.png "analysis pipeline")
 
@@ -22,22 +22,22 @@ Transcriptome assembly:
 Post-processing:
 1. Transcriptome quality assessment:
 - Calculate fragment mapping rates by mapping reads back to the transcripts using **[Bowtie 2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)** v 2.3.0 
-- Examine orthologs completeness against 1,066 complete universal single copy orthologous gene from **[arthropoda_odb9 database using](https://busco.ezlab.org/datasets/arthropoda_odb9.tar.gz)** using **[BUSCO](https://busco.ezlab.org)** v 3
-- Calculate ExN50 statistics (top x% most expressed transcripts that have at least N50 length) (see **[details](https://github.com/trinityrnaseq/trinityrnaseq/wiki/Transcriptome-Contig-Nx-and-ExN50-stats)**)
+- Examine orthologs completeness against 1,066 complete universal single copy orthologous gene from **[arthropoda_odb9 database](https://busco.ezlab.org/datasets/arthropoda_odb9.tar.gz)** using **[BUSCO](https://busco.ezlab.org)** v 3
+- Calculate ExN50 statistics (Top x% most expressed transcripts that have at least N50 length) (See **[details](https://github.com/trinityrnaseq/trinityrnaseq/wiki/Transcriptome-Contig-Nx-and-ExN50-stats)**)
 2. Transcriptome annotation:
 - Homology search against **[UniProt](https://data.broadinstitute.org/Trinity/Trinotate_v3_RESOURCES/uniprot_sprot.pep.gz)** database using **[BlastX](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download)** v 2.6.0
 - Homology search against **[non-redundant arthropods](https://ftp.ncbi.nlm.nih.gov/blast/db/v5/nr_v5.*.tar.gz)** database using **[BlastX](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download)** v 2.8.0
 - Obtain functional annotation using BlastX UniProt results from **[EggNOG](http://eggnogdb.embl.de/#/app/home)** (Evolutionary Genealogy of Genes: Non-supervised Orthologous Groups), **[KEGG](https://www.kegg.jp)** (Kyoto Encyclopedia of Genes and Genomes), and **[GO](http://geneontology.org)** (Gene Ontology) database using **[Trinotate](https://github.com/Trinotate/Trinotate.github.io/wiki)** v 3.0.2 
 3. Differential expression analysis:
 - Quantify transcripts using alignment based abundance estimation method using **[RSEM](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-12-323)**
-- Perform differential expression analysis using **[EdgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html)** (the trimmed mean of M-values normalization method (TMM) )
+- Perform differential expression analysis using **[EdgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html)** (The trimmed mean of M-values normalization method (TMM) )
 
 ## Contact informations
 **Phongthana Pasookhush**
 - Ph.D. student in Biotechnology, Department of Biology, Srinakharinwirot University
 - [ResearchGate](https://www.researchgate.net/profile/Phongthana_Pasookhush2)| j_pasook@hotmail.com
 
-**Charlie Hindmarch, Ph.D.**
+**Charles Hindmarch, Ph.D.**
 - Adjunct Assistant Professor, Department of Medicine, Queen's University
 
 **Siwaporn Longyant, Ph.D.**
