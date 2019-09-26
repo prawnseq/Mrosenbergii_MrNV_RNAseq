@@ -5,7 +5,7 @@ coming soon
 ## Data availibility
 Raw data has been uploaded to the National Centre for Biotechnology Information Sequence Read Archive (SRA) under the accession BioProject number: PRJNA550272.
 ## About
-This pipeline was used for the transcriptome assembly and differential expression analysis of *M.rosenbergii* in response to *MrNV* infection.  **[Snakemake](https://snakemake.readthedocs.io/en/stable/)** tool was used to create reproducible and scalable automated pipeline. The pipeline contained three major sections including raw data pre-processing, transcriptome assembly, and post-processing of the transcriptome (See below). 
+This pipeline was used for the transcriptome assembly and differential expression analysis of *M.rosenbergii* in response to *Mr*NV infection.  **[Snakemake](https://snakemake.readthedocs.io/en/stable/)** tool was used to create reproducible and scalable automated pipeline. The pipeline contained three major sections including raw data pre-processing, transcriptome assembly, and post-processing of the transcriptome (See below). 
 
 ![alt text](https://github.com/prawnseq/Mrosenbergii_MrNV_RNAseq/blob/master/AnalysisPipeline.png "analysis pipeline")
 
