@@ -1,7 +1,8 @@
 # Transcriptomic analysis (RNAseq) of *Macrobrachium rosenbergii* post-larvae in response to *Macrobrachium rosenbergii* nodavirus (*Mr*NV) infection.
 
 ## Publication information
-coming soon
+Phongthana Pasookhush, Charles Hindmarch, Siwaporn Longyant, Paisarn Sithigorngul, William G. Bendena, Parin Chaivisuthangkura. Transcriptomic analysis of *Macrobrachium rosenbergii* (giant fresh water prawn) postlarvae in response to *M. rosenbergii* nodavirus (*Mr*NV) infection: *de novo* assembly and functional annotation. BMC Genomics volume 20, Article number: XXX (2019), DOI: 10.1186/s12864-019-6102-6
+
 ## Data availibility
 Raw data has been uploaded to the National Centre for Biotechnology Information Sequence Read Archive (SRA) under the  BioProject number: PRJNA550272.
 ## About
