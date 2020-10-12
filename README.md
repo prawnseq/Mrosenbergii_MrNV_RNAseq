@@ -35,8 +35,9 @@ Post-processing:
 
 ## Contact informations
 **Phongthana Pasookhush**
-- Ph.D. student in Biotechnology, Department of Biology, Srinakharinwirot University
-- [ResearchGate](https://www.researchgate.net/profile/Phongthana_Pasookhush2)| j_pasook@hotmail.com
+- Researcher, Division of Bioinfiormatics and Data Management for Research, Faculty of Medicine, Siriraj Hospital, Mahidol University
+- Former Ph.D. student in Biotechnology, Department of Biology, Srinakharinwirot University
+- [ResearchGate](https://www.researchgate.net/profile/Phongthana_Pasookhush2)| phongthana.pas@mahidol.edu
 
 **Charles Hindmarch, Ph.D.**
 - Adjunct Assistant Professor, Department of Medicine, Queen's University
