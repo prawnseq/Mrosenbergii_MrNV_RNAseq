@@ -34,7 +34,7 @@ Post-processing:
 - Perform differential expression analysis using **[EdgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html)** (The trimmed mean of M-values normalization method (TMM) )
 
 ## Contact informations
-**Phongthana Pasookhush**
+**Phongthana Pasookhush, Ph.D.**
 - Researcher, Division of Bioinfiormatics and Data Management for Research, Faculty of Medicine, Siriraj Hospital, Mahidol University
 - Former Ph.D. student in Biotechnology, Department of Biology, Srinakharinwirot University
 - [ResearchGate](https://www.researchgate.net/profile/Phongthana_Pasookhush2)| phongthana.pas@mahidol.edu
